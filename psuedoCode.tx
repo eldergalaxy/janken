@@ -1,0 +1,20 @@
+Two object players
+    has a move ability
+    Rock, paper or scissors
+
+    selects move
+
+compare moves
+selecting player who's move is highest
+if they are the same, run aggain
+determine outcome
+ask to play again
+
+
+
+play this 5 times
+    player 1 makes a move
+    player 2 makes a move
+    winner is determined
+    update if player won or lost the round
+    update counter variable
