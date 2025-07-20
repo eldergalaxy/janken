@@ -3,6 +3,7 @@
 
 const scoreDisplay = document.getElementById('scoreDisplay');
 const colorComment = document.getElementById('commentary');
+const whoWon = document.getElementById("whoWon");
 let humanScore = 0;
 let computerScore = 0;
 
@@ -15,12 +16,6 @@ getComputerChoice = function(max){
 };
 let computerSelection = getComputerChoice(3);        
 
-// function playGame(){
-    //     for (let i = 0; i < 5; i++) {
-        //         const humanSelection = getHumanChoice();
-        //         playRound(humanSelection, computerSelection);
-        //     }
-        // }
         
         document.getElementById('getChoiceRock').addEventListener('click', () => {
             const humanSelection = 'rock';
@@ -54,34 +49,48 @@ let computerSelection = getComputerChoice(3);
                 console.log('Human wins with ' + humanSelection, 'beating ' + computerChoice);
                 humanScore ++;
                 console.log("computerScore = " + computerScore, "humanScore = " + humanScore);
+                checkWhoWon()
                
             }else if (humanSelection === 'paper' && computerChoice === 'rock'){
                 console.log('Human wins with ' + humanSelection, 'beating ' + computerChoice);
                 humanScore ++;
                 console.log("computerScore = " + computerScore, "humanScore = " + humanScore);
+                checkWhoWon()
                 
             }else if (humanSelection === 'scissors' && computerChoice === 'paper'){
                 console.log('Human wins with ' + humanSelection, 'beating ' + computerChoice);
                 humanScore ++;
                 console.log("computerScore = " + computerScore, "humanScore = " + humanScore);
+                checkWhoWon()
             
             }else if (computerChoice === 'rock' && humanSelection === 'scissors'){
                 console.log('computer wins with ' + computerChoice, 'beating ' + humanSelection);
                 computerScore ++;
                 console.log("computerScore = " + computerScore, "humanScore = " + humanScore);
+                checkWhoWon()
                 
             }else if (computerChoice === 'paper' && humanSelection === 'rock'){
                 console.log('computer wins with ' + computerSelection, 'beating ' + humanSelection);
                 computerScore ++;
                 console.log("computerScore = " + computerScore, "humanScore = " + humanScore);
+                checkWhoWon()
                 
             }else if (computerChoice === 'scissors' && humanSelection === 'paper'){
                 console.log('computer wins with ' + computerChoice, 'beating ' + humanSelection);
                 computerScore ++;
                 console.log("computerScore = " + computerScore, "humanScore = " + humanScore);
-                                
-            }else{
-                console.log('Both played ' + humanSelection)};
+                checkWhoWon()};
+                
+                // else{
+                // console.log('Both played ' + humanSelection)};
             };
 
+
+function checkWhoWon() {            
+    if (humanScore > 5) {
+        whoWon.textContent = 'Human Won!';
+    } else if (computerScore > 5) {
+        whoWon.textContent = 'Computer Won!';
+    };
+};
 console.log("computerScore = " + computerScore, "humanScore = " + humanScore);
